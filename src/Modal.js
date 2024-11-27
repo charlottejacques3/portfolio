@@ -1,5 +1,7 @@
 import React from 'react';
 
+// referenced tutorial: https://deadsimplechat.com/blog/creating-a-reusable-pop-up-modal-in-react-from-scratch/
+
 function Modal({ children, onClose }) {
   return (
     <div style={styles.overlay}>

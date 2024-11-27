@@ -6,59 +6,75 @@ import Modal from './Modal'
 import canadaUnknown from './images/canada_unknown.png';
 import pennywise from './images/pennywise.png';
 import dungeonCrawl from './images/dungeon_crawl.png';
+import octocards from './images/octocards.png';
 
+
+//project data
 const portfolioItems = [
   {
     id: 1,
     title: "Canada Unknown",
     tagline: "Website showcasing Canada's underrated parks",
     tech: "HTML/CSS/JS, PHP, MySQL",
-    description: "As part of my Grade 12 Capstone project, I designed and coded a website showcasing some of Canada's lesser known parks. I chose to do this project not only to improve my coding skills, but also to try to help take the strain off some heavily trafficked parks, and boost local economies in undervisited areas. The parks can be browsed either through a list or a map. The website information was stored in a mySQL database, and uploaded onto the website using PHP.",
+    description: `As part of my Grade 12 Capstone project, I designed and coded a website showcasing some of Canada's lesser known parks. 
+    I chose to do this project not only to improve my coding skills in both the frontend and backend, but also to try to help take the strain off some heavily trafficked parks, and boost local economies in undervisited areas. The parks can be browsed either through a list or a map. 
+    The park information was stored in a mySQL database, and served to the website using PHP. I used HTML and CSS to design the site, and JavaScript to make the site responsive across various devices.`,
     image: canadaUnknown,
     link: "https://sarsensystems.com/parks/index.php",
-    github: "",
+    github: "https://github.com/charlottejacques3/canada-unknown",
   },
   {
     id: 2,
     title: "Octocards",
-    tagline: "Visual study app",
-    description: "Octocards description",
+    tagline: "Visual study app with a spaced repetition algorithm",
+    description: `I designed a web application to help visual learners like myself organize their study material into flashcards and tables in a way that makes sense to them. To promote maximum retention, they can then review the content with the program's spaced repetition algorithm. In addition, I have implemented features for users to group their study material into classes and topics.
+    This application was coded mostly in Python's Django framework, which provided a way to store the user's study material in model classes connected to a SQLite database, and display it in a view. I coded the frontend in CSS, making use of the Bootstrap library.`,
     tech: "HTML/CSS/JS, Django, Bootstrap",
-    image: "",
+    image: octocards,
     link: "",
-    github: "",
+    github: "https://github.com/charlottejacques3/octocards",
   },
   {
     id: 3,
+    title: "Pennywise",
+    tagline: "Hackathon project - Finance management software for students",
+    description: `I participated in the CODEHER+ Hackathon hosted by the University of Victoria Women in Engineering and Computer Science in October 2024. The prompt was to create a financial management platform for students.
+    To achieve this, I collaborated with group members to create a web application allowing the user to set a budget and track expenses, and notifying them if they are over budget in a certain category. To make the website more engaging and interactive, we also implemented a Wordle-like minigame reminding the user not to overspend.
+    My role in this project was primarily on the backend, where I implemented a database and models using Python's Django framework.`,
+    tech: "HTML/CSS/JS, Django",
+    image: pennywise,
+    link: "",
+    github: "https://github.com/charlottejacques3/codeher_hackathon_2024",
+  },
+  {
+    id: 4,
     title: "VikeEats",
-    tagline: "Club project",
-    description: "Collaborated with peers, used Git, ",
+    tagline: "Extracurricular club project",
+    description: `I am currently working as a member of the backend team on a project for VikeLabs, a software development club at the University of Victoria. The goal of our project is to create a website that provides easy access to information on all of UVic's food outlets, including menus, hours, and dietary restriction lists.
+    Using the Beautiful Soup Python library, I have scraped various UVic websites to obtain menu information, and made this data available to the frontend team by creating an API with Flask.
+    Throughout the making of this project, I have learned to collaborate effectively with teammmates in a software development context, and have become proficient in GitHub version control.`,
     tech: "HTML/CSS/JS, Flask, Beautiful Soup",
     image: "",
     link: "",
     github: "",
   },
   {
-    id: 4,
-    title: "Pennywise",
-    tagline: "Hackathon project",
-    description: "Collaborated with peers, did not use Git:) ",
-    tech: "HTML/CSS/JS, Django",
-    image: pennywise,
-    link: "",
-    github: "",
-  },
-  {
     id: 5,
     title: "Dungeon Crawl",
-    tagline: "Video game where",
-    description: "Programming 12",
+    tagline: "Video game where the player navigates a maze of tunnels and fights off monsters",
+    description: `As a school project, I created a video game where the player navigates a maze of rooms and tunnels to reach the end of the level. Along the way, they encounter various types of monsters that they must fight off, with a final boss in the very last room.
+    To implement this project, I utilized object-oriented programming concepts within Java's Processing library.`,
     tech: "Processing (Java)",
     image: dungeonCrawl,
     link: "",
-    github: "",
+    github: "https://github.com/charlottejacques3/dungeon-crawl",
   },
 ];
+
+function SplitDescription(props) {
+  const text = props.text;
+  return text.split('\n').map(str => <p>{str}</p>);
+}
 
 class App extends Component {
   constructor(props) {
@@ -103,6 +119,9 @@ class App extends Component {
                   <p className="card-text">{project.tagline}</p>
                   <p><strong>Technologies used: </strong>{project.tech}</p>
                   <button onClick={() => this.projectDetails(project)} className="btn btn-primary">More Details</button>
+                  { project.github !="" ? (
+                    <a href={project.github} className="btn btn-primary">Github</a>
+                  ) : null}
                   { project.link !="" ? (
                     <a href={project.link} className="btn btn-primary">Project Link</a>
                   ) : null}
@@ -115,7 +134,7 @@ class App extends Component {
           <Modal onClose={() => this.setState({ modal: !this.state.modal })}>
             <h2>{this.state.activeItem.title}</h2>
             <p><strong>Technologies used: </strong>{this.state.activeItem.tech}</p>
-            <p>{this.state.activeItem.description}</p>
+            <SplitDescription text={this.state.activeItem.description}/>
             { this.state.activeItem.link !="" ? (
                     <a href={this.state.activeItem.link} className="btn btn-primary">Project Link</a>
                   ) : null}
