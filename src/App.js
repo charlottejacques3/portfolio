@@ -16,9 +16,8 @@ const portfolioItems = [
     title: "Canada Unknown",
     tagline: "Website showcasing Canada's underrated parks",
     tech: "HTML/CSS/JS, PHP, MySQL",
-    description: `As part of my Grade 12 Capstone project, I designed and coded a website showcasing some of Canada's lesser known parks. 
-    I chose to do this project not only to improve my coding skills in both the frontend and backend, but also to try to help take the strain off some heavily trafficked parks, and boost local economies in undervisited areas. The parks can be browsed either through a list or a map. 
-    The park information was stored in a mySQL database, and served to the website using PHP. I used HTML and CSS to design the site, and JavaScript to make the site responsive across various devices.`,
+    description: `I developed my frontend and backend skills by designing and coding a website showcasing Canada's lesser known parks. The parks can be browsed either through a list or a map.
+    The park information is stored in a mySQL database, and served to the website using PHP. I used HTML and CSS to design the site, and JavaScript to make the site responsive across various devices`,
     image: canadaUnknown,
     link: "https://sarsensystems.com/parks/index.php",
     github: "https://github.com/charlottejacques3/canada-unknown",
@@ -27,7 +26,7 @@ const portfolioItems = [
     id: 2,
     title: "Octocards",
     tagline: "Visual study app with a spaced repetition algorithm",
-    description: `I designed a web application to help visual learners like myself organize their study material into flashcards and tables in a way that makes sense to them. To promote maximum retention, they can then review the content with the program's spaced repetition algorithm. In addition, I have implemented features for users to group their study material into classes and topics.
+    description: `I designed a web application to help visual learners organize their study material into flashcards and tables in a way that makes sense to them. To promote maximum retention, they can then review the content with the program's spaced repetition algorithm. In addition, I have implemented features for users to group their study material into classes and topics.
     This application was coded mostly in Python's Django framework, which provided a way to store the user's study material in model classes connected to a SQLite database, and display it in a view. I coded the frontend in CSS, making use of the Bootstrap library.`,
     tech: "HTML/CSS/JS, Django, Bootstrap",
     image: octocards,
@@ -105,8 +104,9 @@ class App extends Component {
       <div className="container">
         <div className="jumbotron">
           <h1 className="display-4">Charlotte Jacques</h1>
+          <p id="links"><a href="https://github.com/charlottejacques3">Github</a> | <a href="https://www.linkedin.com/in/charlotte-jacques-9472a6337/">LinkedIn</a></p>
         </div>
-        <p>My name is Charlotte Jacques, and I am a second year computer science student at the University of Victoria, and I am interested in full-stack web development. 
+        <p>My name is Charlotte Jacques, and I am a second year computer science student at the University of Victoria, and I am interested in software development, cybersecurity, and data science. 
         In my free time, I enjoy rock climbing, hiking, crocheting, and reading.
         </p>
         <div className="row">
