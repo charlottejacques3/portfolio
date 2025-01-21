@@ -106,7 +106,7 @@ class App extends Component {
           <h1 className="display-4">Charlotte Jacques</h1>
           <p id="links"><a href="https://github.com/charlottejacques3">Github</a> | <a href="https://www.linkedin.com/in/charlotte-jacques-9472a6337/">LinkedIn</a></p>
         </div>
-        <p>My name is Charlotte Jacques, and I am a second year computer science student at the University of Victoria, and I am interested in software development, cybersecurity, and data science. 
+        <p>My name is Charlotte Jacques, and I am a second year computer science student at the University of Victoria, and I am interested in software development, cybersecurity, bioinformatics, and data science. 
         In my free time, I enjoy rock climbing, hiking, crocheting, and reading.
         </p>
         <div className="row">
