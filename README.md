@@ -1,4 +1,4 @@
-# Charlotte Jaacques Personal Portfolio
+# Charlotte Jacques Personal Portfolio
 
 ## Description
 **Technologies used:**: React JS, Bootstrap
