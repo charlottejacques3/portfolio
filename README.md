@@ -1,8 +1,13 @@
-# Getting Started with Create React App
+# Charlotte Jacques Personal Portfolio
+
+## Description
+**Technologies used:**: React JS, Bootstrap
+
+Using React JavaScript and the Boostrap CSS library, I developed a personal portfolio website to showcase my technical projects. The website includes relevant images and descriptions of the technologies and processes used for each project.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Instructions
 
 In the project directory, you can run:
 
